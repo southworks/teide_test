@@ -1,0 +1,192 @@
+{
+  "intents": [
+    {
+      "triggerQueries": [
+        "weather"
+      ],
+      "dialogId": "new_topic_69c5b031107b402c934d4fc8e80baf09",
+      "isTriggeringEnabled": true,
+      "id": "new_topic_69c5b031107b402c934d4fc8e80baf09",
+      "displayName": "Weather topic",
+      "createdTime": "2022-06-22T16:44:39.4067041Z",
+      "updatedTime": "2022-06-22T16:45:39.1200367Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    }
+  ],
+  "dialogs": [
+    {
+      "rootNodeId": "ca11101d-3815-4933-9cca-275e009b1795",
+      "messageNodes": [
+        {
+          "botMessageId": "cc6d7d30-bb6c-475d-b459-cee23dce58e3",
+          "nodeType": "BotMessageNode",
+          "id": "ffea3758-e957-433c-a645-626aec7035e6"
+        }
+      ],
+      "actionNodes": [
+        {
+          "contextVariableId": "1c694f90-f4e8-479f-9b9b-29a131ce8bd7",
+          "nodeType": "ActionNode",
+          "inputParameterVariableIdMap": {
+            "text": "{384a1903-4295-49cf-a0bb-cd559e40d0aa}"
+          },
+          "outputExpressionVariableIds": [
+            "97dc4332-80c9-401e-a6bb-9699899bc7e8"
+          ],
+          "id": "08ce768a-fc40-4cab-b97c-cb836fd1286f",
+          "defaultTargetNodeId": "ffea3758-e957-433c-a645-626aec7035e6"
+        }
+      ],
+      "questionNodes": [
+        {
+          "contextVariableId": "384a1903-4295-49cf-a0bb-cd559e40d0aa",
+          "nodeType": "QuestionNode",
+          "id": "ca11101d-3815-4933-9cca-275e009b1795",
+          "defaultTargetNodeId": "08ce768a-fc40-4cab-b97c-cb836fd1286f"
+        }
+      ],
+      "id": "new_topic_69c5b031107b402c934d4fc8e80baf09",
+      "displayName": "Untitled",
+      "createdTime": "2022-06-22T16:44:39.4067041Z",
+      "updatedTime": "2022-06-22T16:45:39.1200367Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    }
+  ],
+  "botMessages": [
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "Can you give me your current location (city name)?"
+        }
+      },
+      "id": "d9f9cd5b-48c3-4674-b559-b030c11a3c3a",
+      "createdTime": "2022-06-22T16:41:46.713Z",
+      "updatedTime": "2022-06-22T16:41:46.713Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    },
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "The current weather in {384a1903-4295-49cf-a0bb-cd559e40d0aa} is: {97dc4332-80c9-401e-a6bb-9699899bc7e8}"
+        }
+      },
+      "id": "cc6d7d30-bb6c-475d-b459-cee23dce58e3",
+      "createdTime": "2022-06-22T16:44:22.864Z",
+      "updatedTime": "2022-06-22T16:44:22.864Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    }
+  ],
+  "actionDefinitions": [
+    {
+      "timeoutInSeconds": 60,
+      "retryCount": 1,
+      "method": 2,
+      "headers": {
+        "accept": "application/json"
+      },
+      "bodyContent": "{\"text\":\"{384a1903-4295-49cf-a0bb-cd559e40d0aa}\"}",
+      "actionType": "Flow",
+      "flowMetadata": {
+        "id": "13d1eb6b-4af2-ec11-bb3d-000d3a559e8e",
+        "title": "Get weather",
+        "description": "Call this flow from Power Virtual Agents.",
+        "httpMethod": 2,
+        "inputParameters": [
+          {
+            "name": "city",
+            "id": "text",
+            "type": "String",
+            "optional": false
+          }
+        ],
+        "outputParameters": [
+          {
+            "name": "current_weather",
+            "id": "current_weather",
+            "type": "String",
+            "optional": true
+          }
+        ],
+        "outputSchemaType": "Json",
+        "createdTime": "2022-06-22T16:43:28Z",
+        "isEnabled": true,
+        "lastModifiedTime": "2022-06-22T16:43:53Z",
+        "versionNumber": 978704
+      },
+      "id": "e453c7f6-9ed7-44b3-aed3-85ccb8aee1e5",
+      "displayName": "Get weather",
+      "description": "Call this flow from Power Virtual Agents.",
+      "createdTime": "2022-06-22T16:44:14.778Z",
+      "updatedTime": "2022-06-22T16:44:14.778Z"
+    }
+  ],
+  "contextVariables": [
+    {
+      "systemType": "None",
+      "initializerType": "UserQuestion",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": true,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "messages": {
+        "GetValue": [
+          "d9f9cd5b-48c3-4674-b559-b030c11a3c3a"
+        ]
+      },
+      "isGlobal": false,
+      "id": "384a1903-4295-49cf-a0bb-cd559e40d0aa",
+      "displayName": "city",
+      "createdTime": "2022-06-22T16:44:39.4067041Z",
+      "updatedTime": "2022-06-22T16:45:39.1200367Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    },
+    {
+      "customTypeId": "3e264b7c-18fa-4b92-b82e-f22f94f52c16",
+      "initializerType": "Action",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": false,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "actionId": "e453c7f6-9ed7-44b3-aed3-85ccb8aee1e5",
+      "isGlobal": false,
+      "id": "1c694f90-f4e8-479f-9b9b-29a131ce8bd7",
+      "displayName": "",
+      "createdTime": "2022-06-22T16:44:39.4067041Z",
+      "updatedTime": "2022-06-22T16:45:39.1200367Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    },
+    {
+      "systemType": "String",
+      "initializerType": "Expression",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": false,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "expression": "@parameters('1c694f90-f4e8-479f-9b9b-29a131ce8bd7')['current_weather']",
+      "isGlobal": false,
+      "id": "97dc4332-80c9-401e-a6bb-9699899bc7e8",
+      "displayName": "current_weather",
+      "createdTime": "2022-06-22T16:44:39.4067041Z",
+      "updatedTime": "2022-06-22T16:45:39.1200367Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    }
+  ],
+  "jsonTypes": [
+    {
+      "customTypeSchema": "Json",
+      "id": "3e264b7c-18fa-4b92-b82e-f22f94f52c16",
+      "displayName": "Response Json Type for Flow - Get weather",
+      "createdTime": "2022-06-22T16:44:14.779Z",
+      "updatedTime": "2022-06-22T16:44:14.779Z"
+    }
+  ]
+}
