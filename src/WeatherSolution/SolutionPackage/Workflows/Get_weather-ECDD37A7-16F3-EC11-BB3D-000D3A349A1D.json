@@ -1,0 +1,112 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_msnweather": {
+        "api": {
+          "name": "shared_msnweather"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedmsnweather_9899c"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "actions": {
+        "Get_current_weather": {
+          "inputs": {
+            "authentication": "@parameters('$authentication')",
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_msnweather",
+              "connectionName": "shared_msnweather",
+              "operationId": "CurrentWeather"
+            },
+            "parameters": {
+              "Location": "@triggerBody()['text']",
+              "units": "Metric"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "01661a83-7629-4601-877d-29fcaba1143b"
+          },
+          "runAfter": {},
+          "type": "OpenApiConnection"
+        },
+        "Return_value(s)_to_Power_Virtual_Agents": {
+          "inputs": {
+            "body": {
+              "conditions": "@outputs('Get_current_weather')?['body/responses/weather/current/cap']",
+              "temperature": "@{outputs('Get_current_weather')?['body/responses/weather/current/temp']}"
+            },
+            "schema": {
+              "properties": {
+                "conditions": {
+                  "title": "conditions",
+                  "type": "string",
+                  "x-ms-dynamically-added": true
+                },
+                "temperature": {
+                  "title": "temperature",
+                  "type": "string",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "type": "object"
+            },
+            "statusCode": 200
+          },
+          "kind": "VirtualAgent",
+          "metadata": {
+            "operationMetadataId": "0ae39397-9b41-4ab8-b61d-b644808eb764"
+          },
+          "runAfter": {
+            "Get_current_weather": [
+              "Succeeded"
+            ]
+          },
+          "type": "Response"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "outputs": {},
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "inputs": {
+            "schema": {
+              "properties": {
+                "text": {
+                  "description": "Please enter your input",
+                  "title": "city",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "type": "object"
+            }
+          },
+          "kind": "VirtualAgent",
+          "metadata": {
+            "operationMetadataId": "c96c2eb1-b21b-4961-8381-f6c4ea3d23a7"
+          },
+          "type": "Request"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}
