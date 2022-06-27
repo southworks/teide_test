@@ -3,7 +3,7 @@
   "ConnectionReferences": [
     {
       "LogicalName": "new_sharedmsnweather_9899c",
-      "ConnectionId": "#{CONNECTION}#",
+      "ConnectionId": "#{CONNECTION_SECRET_NAME}#",
       "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_msnweather"
     }
   ]
