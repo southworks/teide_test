@@ -1,0 +1,5 @@
+<botcomponent_workflowset>
+  <botcomponent_workflow botcomponentid.schemaname="new_topic_a09a95fc214e433983928a3b0dbc7bfc" workflowid.workflowid="ecdd37a7-16f3-ec11-bb3d-000d3a349a1d">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+</botcomponent_workflowset>
