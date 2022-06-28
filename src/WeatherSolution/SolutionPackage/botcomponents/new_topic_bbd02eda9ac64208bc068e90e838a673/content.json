@@ -1,0 +1,227 @@
+{
+  "intents": [
+    {
+      "triggerQueries": [
+        "check emails"
+      ],
+      "dialogId": "new_topic_bbd02eda9ac64208bc068e90e838a673",
+      "isTriggeringEnabled": true,
+      "id": "new_topic_bbd02eda9ac64208bc068e90e838a673",
+      "displayName": "Another topic",
+      "createdTime": "2022-06-28T21:27:30.0217556Z",
+      "updatedTime": "2022-06-28T21:27:30.0217556Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    }
+  ],
+  "dialogs": [
+    {
+      "rootNodeId": "d923ec9c-a0a1-4866-b574-a6fe913cb65c",
+      "messageNodes": [
+        {
+          "botMessageId": "0f1efed0-af3f-41ea-ae2e-3a64c045a73e",
+          "nodeType": "BotMessageNode",
+          "id": "1862b072-4fb0-45aa-aaee-0b32393b6aa8"
+        },
+        {
+          "botMessageId": "d107b699-fc92-444a-8528-1a893c9a1032",
+          "nodeType": "BotMessageNode",
+          "id": "ab4cb1d5-4fe6-4567-ad5c-4d70df1ea73b"
+        },
+        {
+          "botMessageId": "a85d8635-184c-4ee0-b592-016c25498c0f",
+          "nodeType": "BotMessageNode",
+          "id": "78d3bf27-f28c-4e9f-96b0-08cc5bf562dc"
+        }
+      ],
+      "actionNodes": [
+        {
+          "contextVariableId": "0a39602a-c3ea-4b44-8e85-98233821b4fd",
+          "nodeType": "ActionNode",
+          "outputExpressionVariableIds": [
+            "c8a9fca8-f4fb-4a3e-9e60-bcc10e5fa16b"
+          ],
+          "id": "9f13214c-d441-42a9-b8d8-5b45a5d46e92",
+          "routes": [
+            {
+              "expression": "@greater(parameters('c8a9fca8-f4fb-4a3e-9e60-bcc10e5fa16b'), 0)",
+              "targetNodeId": "78d3bf27-f28c-4e9f-96b0-08cc5bf562dc"
+            }
+          ],
+          "defaultTargetNodeId": "ab4cb1d5-4fe6-4567-ad5c-4d70df1ea73b"
+        }
+      ],
+      "questionNodes": [
+        {
+          "contextVariableId": "de4d2811-d86a-4d7c-844a-4cb7f40ca537",
+          "nodeType": "QuestionNode",
+          "id": "d923ec9c-a0a1-4866-b574-a6fe913cb65c",
+          "routes": [
+            {
+              "expression": "@equals(parameters('de4d2811-d86a-4d7c-844a-4cb7f40ca537'), true)",
+              "targetNodeId": "9f13214c-d441-42a9-b8d8-5b45a5d46e92"
+            }
+          ],
+          "defaultTargetNodeId": "1862b072-4fb0-45aa-aaee-0b32393b6aa8"
+        }
+      ],
+      "id": "new_topic_bbd02eda9ac64208bc068e90e838a673",
+      "displayName": "Untitled",
+      "createdTime": "2022-06-28T21:27:30.0217556Z",
+      "updatedTime": "2022-06-28T21:27:30.0217556Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    }
+  ],
+  "botMessages": [
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "Do you want to check your emails?"
+        }
+      },
+      "id": "a2c3b528-6a19-478c-9723-e77826086354",
+      "createdTime": "2022-06-28T21:23:33.494Z",
+      "updatedTime": "2022-06-28T21:23:33.494Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    },
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "Bye!"
+        }
+      },
+      "id": "0f1efed0-af3f-41ea-ae2e-3a64c045a73e",
+      "createdTime": "2022-06-28T21:23:02.174Z",
+      "updatedTime": "2022-06-28T21:23:02.174Z"
+    },
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "You don't have unread emails."
+        }
+      },
+      "id": "d107b699-fc92-444a-8528-1a893c9a1032",
+      "createdTime": "2022-06-28T21:26:56.244Z",
+      "updatedTime": "2022-06-28T21:26:56.244Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    },
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "You have {c8a9fca8-f4fb-4a3e-9e60-bcc10e5fa16b} unread emails."
+        }
+      },
+      "id": "a85d8635-184c-4ee0-b592-016c25498c0f",
+      "createdTime": "2022-06-28T21:27:09.655Z",
+      "updatedTime": "2022-06-28T21:27:09.655Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    }
+  ],
+  "actionDefinitions": [
+    {
+      "timeoutInSeconds": 60,
+      "retryCount": 1,
+      "method": 2,
+      "headers": {
+        "accept": "application/json"
+      },
+      "bodyContent": "",
+      "actionType": "Flow",
+      "flowMetadata": {
+        "id": "98dfe4e1-28f7-ec11-bb3d-0022480bafcd",
+        "title": "Check_emails",
+        "description": "Call this flow from Power Virtual Agents.",
+        "httpMethod": 2,
+        "outputParameters": [
+          {
+            "name": "count",
+            "id": "count",
+            "type": "Number",
+            "optional": true
+          }
+        ],
+        "outputSchemaType": "Json",
+        "createdTime": "2022-06-28T21:25:51Z",
+        "isEnabled": true,
+        "lastModifiedTime": "2022-06-28T21:25:58Z",
+        "versionNumber": 1139681
+      },
+      "id": "afcd17a8-47f0-4b2c-9082-6a4ba4d89538",
+      "displayName": "Check_emails",
+      "description": "Call this flow from Power Virtual Agents.",
+      "createdTime": "2022-06-28T21:26:29.875Z",
+      "updatedTime": "2022-06-28T21:26:29.875Z"
+    }
+  ],
+  "contextVariables": [
+    {
+      "systemType": "Boolean",
+      "initializerType": "UserQuestion",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": true,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "messages": {
+        "GetValue": [
+          "a2c3b528-6a19-478c-9723-e77826086354"
+        ]
+      },
+      "isGlobal": false,
+      "id": "de4d2811-d86a-4d7c-844a-4cb7f40ca537",
+      "displayName": "checkEmails",
+      "createdTime": "2022-06-28T21:27:30.0217556Z",
+      "updatedTime": "2022-06-28T21:27:30.0217556Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    },
+    {
+      "customTypeId": "706bf2fe-5395-4164-b60e-3448c6e7f5e3",
+      "initializerType": "Action",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": false,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "actionId": "afcd17a8-47f0-4b2c-9082-6a4ba4d89538",
+      "isGlobal": false,
+      "id": "0a39602a-c3ea-4b44-8e85-98233821b4fd",
+      "displayName": "",
+      "createdTime": "2022-06-28T21:27:30.0217556Z",
+      "updatedTime": "2022-06-28T21:27:30.0217556Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    },
+    {
+      "systemType": "Number",
+      "initializerType": "Expression",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": false,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "expression": "@parameters('0a39602a-c3ea-4b44-8e85-98233821b4fd')['count']",
+      "isGlobal": false,
+      "id": "c8a9fca8-f4fb-4a3e-9e60-bcc10e5fa16b",
+      "displayName": "count",
+      "createdTime": "2022-06-28T21:27:30.0217556Z",
+      "updatedTime": "2022-06-28T21:27:30.0217556Z",
+      "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
+      "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
+    }
+  ],
+  "jsonTypes": [
+    {
+      "customTypeSchema": "Json",
+      "id": "706bf2fe-5395-4164-b60e-3448c6e7f5e3",
+      "displayName": "Response Json Type for Flow - Check_emails",
+      "createdTime": "2022-06-28T21:26:29.876Z",
+      "updatedTime": "2022-06-28T21:26:29.876Z"
+    }
+  ]
+}

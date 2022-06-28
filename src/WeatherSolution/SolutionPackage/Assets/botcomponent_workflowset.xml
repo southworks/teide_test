@@ -2,4 +2,7 @@
   <botcomponent_workflow botcomponentid.schemaname="new_topic_a09a95fc214e433983928a3b0dbc7bfc" workflowid.workflowid="ecdd37a7-16f3-ec11-bb3d-000d3a349a1d">
     <iscustomizable>1</iscustomizable>
   </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="new_topic_bbd02eda9ac64208bc068e90e838a673" workflowid.workflowid="98dfe4e1-28f7-ec11-bb3d-0022480bafcd">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
 </botcomponent_workflowset>
