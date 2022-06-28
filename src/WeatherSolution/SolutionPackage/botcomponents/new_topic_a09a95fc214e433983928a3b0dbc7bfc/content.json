@@ -9,7 +9,7 @@
       "id": "new_topic_a09a95fc214e433983928a3b0dbc7bfc",
       "displayName": "Test topic",
       "createdTime": "2022-06-23T17:13:45.5994553Z",
-      "updatedTime": "2022-06-23T17:21:48.9769946Z",
+      "updatedTime": "2022-06-28T19:24:09.1603535Z",
       "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
       "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
     }
@@ -21,7 +21,8 @@
         {
           "botMessageId": "7022ed71-6287-4349-a98d-a14edaa9f167",
           "nodeType": "BotMessageNode",
-          "id": "8bd583ba-9b37-4f45-a90b-a81bf91d35bd"
+          "id": "8bd583ba-9b37-4f45-a90b-a81bf91d35bd",
+          "defaultTargetNodeId": "63d32ba4-0703-46f9-a089-c79065aaa349"
         }
       ],
       "actionNodes": [
@@ -39,6 +40,13 @@
           "defaultTargetNodeId": "8bd583ba-9b37-4f45-a90b-a81bf91d35bd"
         }
       ],
+      "dialogChangeNodes": [
+        {
+          "targetDialogId": "new_topic_8eb1fd8358024017beae673e76ef472a_aeabea4d071f415c8c107e1cb7af5424_assumedsuccess",
+          "nodeType": "DialogChangeNode",
+          "id": "63d32ba4-0703-46f9-a089-c79065aaa349"
+        }
+      ],
       "questionNodes": [
         {
           "contextVariableId": "00c92af6-9908-4107-a115-3aeec4056b88",
@@ -50,7 +58,7 @@
       "id": "new_topic_a09a95fc214e433983928a3b0dbc7bfc",
       "displayName": "Untitled",
       "createdTime": "2022-06-23T17:13:45.5994553Z",
-      "updatedTime": "2022-06-23T17:21:48.9769946Z",
+      "updatedTime": "2022-06-28T19:24:09.1603535Z",
       "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
       "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
     }
@@ -150,7 +158,7 @@
       "id": "00c92af6-9908-4107-a115-3aeec4056b88",
       "displayName": "city",
       "createdTime": "2022-06-23T17:13:45.5994553Z",
-      "updatedTime": "2022-06-23T17:21:48.9769946Z",
+      "updatedTime": "2022-06-28T19:24:09.1603535Z",
       "createdUserId": "566328ac-2347-4d6f-83be-268a91880fff",
       "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
     },
@@ -166,7 +174,7 @@
       "id": "738bf6c9-2289-4215-a968-68a66b862033",
       "displayName": "",
       "createdTime": "2022-06-23T17:21:32.158Z",
-      "updatedTime": "2022-06-23T17:21:48.9769946Z",
+      "updatedTime": "2022-06-28T19:24:09.1603535Z",
       "createdUserId": "user-0",
       "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
     },
@@ -182,7 +190,7 @@
       "id": "d57e9151-4808-4610-8320-09a0d52b0dab",
       "displayName": "temperature",
       "createdTime": "2022-06-23T17:21:32.158Z",
-      "updatedTime": "2022-06-23T17:21:48.9769946Z",
+      "updatedTime": "2022-06-28T19:24:09.1603535Z",
       "createdUserId": "user-0",
       "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
     },
@@ -198,7 +206,7 @@
       "id": "6c4ab6b3-a6c7-4b61-b2cb-55ec5033bb6c",
       "displayName": "conditions",
       "createdTime": "2022-06-23T17:21:32.159Z",
-      "updatedTime": "2022-06-23T17:21:48.9769946Z",
+      "updatedTime": "2022-06-28T19:24:09.1603535Z",
       "createdUserId": "user-0",
       "updatedUserId": "566328ac-2347-4d6f-83be-268a91880fff"
     }
