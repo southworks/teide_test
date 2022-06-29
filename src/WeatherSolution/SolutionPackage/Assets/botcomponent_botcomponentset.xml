@@ -35,4 +35,7 @@
   <botcomponent_botcomponent botcomponentidone.schemaname="new_topic_a09a95fc214e433983928a3b0dbc7bfc" botcomponentidtwo.schemaname="new_topic_8eb1fd8358024017beae673e76ef472a_aeabea4d071f415c8c107e1cb7af5424_assumedsuccess">
     <iscustomizable>1</iscustomizable>
   </botcomponent_botcomponent>
+  <botcomponent_botcomponent botcomponentidone.schemaname="new_topic_bbd02eda9ac64208bc068e90e838a673" botcomponentidtwo.schemaname="new_topic_8eb1fd8358024017beae673e76ef472a_aeabea4d071f415c8c107e1cb7af5424_assumedsuccess">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_botcomponent>
 </botcomponent_botcomponentset>
