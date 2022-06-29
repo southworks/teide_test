@@ -1,0 +1,100 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365": {
+        "api": {
+          "name": "shared_office365"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "crd95_sharedoffice365_80d4f"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "actions": {
+        "Get_emails_(V3)": {
+          "inputs": {
+            "authentication": "@parameters('$authentication')",
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "GetEmailsV3"
+            },
+            "parameters": {
+              "fetchOnlyUnread": true,
+              "fetchOnlyWithAttachment": false,
+              "folderPath": "Inbox",
+              "importance": "Any",
+              "includeAttachments": false,
+              "top": 25
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "3253ca67-f787-450c-ad63-81414bd94b0e"
+          },
+          "runAfter": {},
+          "type": "OpenApiConnection"
+        },
+        "Return_value(s)_to_Power_Virtual_Agents": {
+          "inputs": {
+            "body": {
+              "count": "@{length(outputs('Get_emails_(V3)')?['body/value'])}"
+            },
+            "schema": {
+              "properties": {
+                "count": {
+                  "title": "count",
+                  "type": "number",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "type": "object"
+            },
+            "statusCode": 200
+          },
+          "kind": "VirtualAgent",
+          "metadata": {
+            "operationMetadataId": "5b2436c9-3999-483d-82ab-98a8ec6832ec"
+          },
+          "runAfter": {
+            "Get_emails_(V3)": [
+              "Succeeded"
+            ]
+          },
+          "type": "Response"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "outputs": {},
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "inputs": {
+            "schema": {
+              "properties": {},
+              "required": [],
+              "type": "object"
+            }
+          },
+          "kind": "VirtualAgent",
+          "metadata": {
+            "operationMetadataId": "2155a6e6-ed9d-4297-a274-62c31ca9977c"
+          },
+          "type": "Request"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

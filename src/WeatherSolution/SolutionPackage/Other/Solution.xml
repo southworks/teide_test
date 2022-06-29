@@ -78,6 +78,7 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <RootComponent type="29" id="{98dfe4e1-28f7-ec11-bb3d-0022480bafcd}" behavior="0" />
       <RootComponent type="29" id="{ecdd37a7-16f3-ec11-bb3d-000d3a349a1d}" behavior="0" />
     </RootComponents>
     <MissingDependencies />
