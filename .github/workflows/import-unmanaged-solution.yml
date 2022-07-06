@@ -61,7 +61,6 @@ jobs:
           environment: ${{ needs.get-environment-from-domain.outputs.subdomain }}
           unmanaged: true
           secrets: ${{ toJSON(secrets) }}
-          solution_action: "upgrade"
 
       - name: publish-customizations
         uses: microsoft/powerplatform-actions/publish-solution@latest
