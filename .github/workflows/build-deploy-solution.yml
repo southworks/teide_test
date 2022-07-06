@@ -24,7 +24,7 @@ on:
 jobs:
   check-solution-existence:
     runs-on: windows-2022
-    environment: ${{ github.event.inputs.target_environment }}
+    environment: ${{ github.event.inputs.environment }}
     steps:
       - uses: actions/checkout@v2
       - id: check-solution
