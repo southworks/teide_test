@@ -72,6 +72,28 @@ runs:
         $solutionZip = $files[0].FullName
         echo "::set-output name=solution_zip::$solutionZip"
 
+    - name: convert-unmanaged-to-managed
+      uses: ./.github/actions/convert-unmanaged-to-managed
+      with:
+        solution_name: ${{ github.event.inputs.solution_name }}
+        environment_url: ${{ github.event.inputs.environment_url }}
+        tenant_id: ${{ inputs.tenant_id }}
+        client_id: ${{ inputs.client_id }}
+        client_secret: ${{ inputs.client_secret }}
+
+    - name: check-solution
+      id: check-solution
+      uses: ./.github/actions/check-solution-existence
+      with:
+        solution_name: ${{ github.event.inputs.solution_name }}
+        environment_url: ${{ github.event.inputs.environment_url }}
+        tenant_id: ${{ inputs.tenant_id }}
+        client_id: ${{ inputs.client_id }}
+        client_secret: ${{ inputs.client_secret }}
+        secrets: ${{ toJSON(secrets) }}
+      outputs:
+        solution_exists: ${{ steps.check-solution.outputs.solution_exists }}
+
     - name: import-solution-to-environment
       uses: microsoft/powerplatform-actions/import-solution@latest
       env:
