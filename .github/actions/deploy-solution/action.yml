@@ -25,6 +25,9 @@ inputs:
   solution_action:
     description: "solution_action"
     required: true
+  solution_exists:
+    description: "solution_exists"
+    required: true
 
 runs:
   using: "composite"
@@ -81,23 +84,10 @@ runs:
         client_id: ${{ inputs.client_id }}
         client_secret: ${{ inputs.client_secret }}
 
-    - name: check-solution
-      id: check-solution
-      uses: ./.github/actions/check-solution-existence
-      with:
-        solution_name: ${{ github.event.inputs.solution_name }}
-        environment_url: ${{ github.event.inputs.environment_url }}
-        tenant_id: ${{ inputs.tenant_id }}
-        client_id: ${{ inputs.client_id }}
-        client_secret: ${{ inputs.client_secret }}
-        secrets: ${{ toJSON(secrets) }}
-      outputs:
-        solution_exists: ${{ steps.check-solution.outputs.solution_exists }}
-
     - name: import-solution-to-environment
       uses: microsoft/powerplatform-actions/import-solution@latest
       env:
-        import_as_holding: "${{ inputs.solution_action == 'upgrade' }}"
+        import_as_holding: "${{ inputs.solution_action == 'upgrade' && inputs.solution_exists == 'true' }}"
       with:
         environment-url: ${{ inputs.environment_url }}
         tenant-id: ${{ env.TENANT_ID }}
@@ -119,4 +109,4 @@ runs:
         client-secret: ${{ env.CLIENT_SECRET }}
         solution-name: ${{ inputs.solution_name }}
         async: true
-      if: ${{ inputs.solution_action == 'upgrade' }}
+      if: ${{ inputs.solution_action == 'upgrade' && inputs.solution_exists == 'true' }}
